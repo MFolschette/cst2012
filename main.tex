@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[11pt]{report}
 
 \usepackage{hyperref}
 
@@ -16,16 +16,16 @@
 
 \usepackage{comment}
 
+\usepackage[hmargin=3cm,vmargin=2cm]{geometry}
 
-
-\usepackage{tikz}
-\newdimen\pgfex
-\newdimen\pgfem
-\usetikzlibrary{arrows,shapes,shadows,scopes}
-\usetikzlibrary{positioning}
-\usetikzlibrary{matrix}
-\usetikzlibrary{decorations.text}
-\usetikzlibrary{decorations.pathmorphing}
+%\usepackage{tikz}
+%\newdimen\pgfex
+%\newdimen\pgfem
+%\usetikzlibrary{arrows,shapes,shadows,scopes}
+%\usetikzlibrary{positioning}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{decorations.text}
+%\usetikzlibrary{decorations.pathmorphing}
 
 %\input{macros/macros}
 \input{macros/macros-ph}
@@ -33,6 +33,7 @@
 
 % Commandes À FAIRE
 \usepackage{color} % Couleurs du texte
+\definecolor{darkgreen}{rgb}{0,0.5,0}
 %\newcommand{\afaire}[1]{\textcolor{red}{[À FAIRE~: #1]}}
 %\newcommand{\resume}[1]{\textcolor{blue}{#1}}
 \newcommand{\todo}[1]{\textcolor{darkgreen}{[#1]}}
@@ -58,23 +59,17 @@
 
 \tableofcontents
 
-\chapter{Thématique}
-Présentation PH + Thomas\\
-Objectif : temps chronométrique + priorités
+\input{parts/thematique}
+\input{parts/contributions}
+\input{parts/perspectives}
+\input{parts/activites}
+\input{parts/animation}
+\input{parts/enseignement}
 
-\chapter{Contributions}
-Nouvelles sémantiques : arcs neutralisants, actions conjointes\\
-Traduction PH vers Thomas (article)
+\bibliographystyle{alpha}
+\bibliography{biblio}
 
-\chapter{Activités scientifiques}
-Papier accepté\\
-Papier soumis\\
-Exposés
-
-\chapter{Animation de la communauté scientifique}
-AED : responsable informatique
-
-\chapter{Enseignement}
-« Monitorat » : MELOG + ALGPR + dSIBAD + encadrement projets R\&D et Ei3
+\newpage
+\todo{ANNEXES : ARCS NEUTRALISANTS + PH2THOMAS}
 
 \end{document}

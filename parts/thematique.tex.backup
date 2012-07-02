@@ -1,0 +1,42 @@
+\chapter{Thématique}
+
+\todo{Présentation PH + Thomas}%\\
+%Objectif : temps chronométrique + priorités}
+
+L'étude et la compréhension des mécanismes du vivant, notamment au sein de la machine cellulaire, pose de nombreux problèmes de représentation.
+La qualité d'un modèle bioinformatique se juge en fonction de nombreux critères qui qualifient notamment les possibilités d'élaboration, de lecture et d'exploitation du modèle.
+Le formalisme utilisé doit en effet permettre de représenter de façon pratique et complète un processus biologique donné, et donc
+de proposer une sémantique claire, sans lacune et compréhensible par une large communauté.
+De plus, son exploitation doit dans l'idéal être efficace et permettre l'obtention de résultats en évitant les problèmes de complexité et donc de temps de calcul.
+
+Dans ce cadre, les Réseaux de Régulation Biologique permettent de représenter des systèmes biologiques souvent déterminés par les physiciens en termes d'équations différentielles.
+Ces équations étant souvent difficiles à résoudre, elles sont simplifiées sous la forme de systèmes algébriques dont les influences entre composants se résument à des activations et des inhibitions.
+
+\section{Modèle de Thomas}
+Le modèle de Thomas, introduit en 1973 dans \cite{Thomas73}, propose une simplification cohérente des modèles continus sous forme d'équations différentielles.
+Plutôt que de considérer les valeurs réelles de concentration des protéines synthétisées, ce modèle repose sur l'utilisation de seuils qui représentent des valeurs particulières de ces concentrations au-delà desquelles les influences entre composants évoluent.
+Cette simplification permet de surcroît de s'affranchir de la connaissance des valeurs réelles des concentrations, qui sont souvent difficiles à obtenir expérimentalement.
+
+Il est possible de représenter simplement un système dans ce formalisme sous la forme d'un Graphe des Interactions dont les nœuds représentent les composants et les arcs étiquetés orientés représentent leurs interactions.
+Ce modèle introduit également la notion de paramètres discrets, qui permettent de spécifier la dynamique du système, notamment dans les cas de coopérations entre gènes.
+Ces paramètres jouent le rôle de points focaux car ils déterminent la direction d'évolution du système dans chacune de ses configurations.
+
+Aujourd'hui plus largement utilisé sous la forme multivaluée \cite{richard-comet-bernot-08}, le modèle de Thomas a connu un certain nombre d'extensions,
+comme l'ajout de multiplexes \cite{bernot-comet-khalis-08},
+l'intégration du temps continu \cite{Ahmad08},
+ou encore l'étude de sémantiques plus précises \cite{BernotSemBRN}.
+%Il a aussi été l'objet de nombreux travaux concernant la prédiction de son comportement d'après le Graphe des Interactions \cite{RiCo07},
+
+\todo{Exemple ?}
+
+Bien qu'il soit adapté à la représentation des Réseaux de Régulation biologiques, et que son utilisation soit très répandue, le modèle de Thomas souffre de deux principaux inconvénients.
+Tout d'abord, son utilisation pour la recherche de propriétés intéressantes sur les systèmes modélisés nécessite souvent l'analyse du Graphe des États dont le calcul s'avère être de complexité exponentielle.
+De plus, l'étude d'un système représenté par ce formalisme nécessite d'avoir choisi une paramétrisation complète au sein d'un ensemble de possibilités potentiellement très important.
+
+\section{Process Hitting}
+Une modélisation des Réseaux de Régulation Biologiques à l'aide de $\pi$-calcul, appelée Process Hitting (ou Frappes de Processus), a été récemment introduite par l'équipe MeForBio dans \cite{PMR10-TCSB,PaulevePhD}.
+Elle propose une modélisation plus modulable des influences entre composants grâce à une représentation d'actions atomiques entre ceux-ci.
+Cette représentation particulière offre des possibilités d'analyse statiques efficaces permettant de sur-approximer et sous-approximer l'atteignabilité d'un processus \cite{PMR12-MSCS}.
+De plus, son atomicité permet d'adopter différents niveaux d'abstraction dans la modélisation, afin notamment de représenter une sur-approximation du comportement d'un système dont la spécification des coopérations ne serait pas entièrement déterminée.
+
+\todo{Exemple ?}
