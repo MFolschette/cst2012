@@ -1,4 +1,5 @@
-\chapter{Thématique}
+
+\chapter{Problématique}
 
 L'étude et la compréhension des mécanismes du vivant, notamment au sein de la machine cellulaire, pose de nombreux problèmes de représentation.
 De nombreux critères participent à la qualité d'un modèle bioinformatique en impactant sa facilité d'élaboration, de lecture et d'exploitation.
@@ -68,7 +69,7 @@ Les paramètres tiennent lieu de points focaux pour l'état concerné.
 
 
 
-\section{Process Hitting}
+\section{Process Hitting}\label{sec:PH}
 Une modélisation des Réseaux de Régulation Biologiques à l'aide de $\pi$-calcul, appelée Process Hitting (ou Frappes de Processus), a été récemment introduite par l'équipe MeForBio dans \cite{PMR10-TCSB,PaulevePhD} et constitue le sujet central de cette thèse.
 Elle propose un point de vue plus modulable des influences entre composants grâce à une représentation d'actions atomiques entre ceux-ci.
 Cette représentation particulière offre des possibilités d'analyse statique efficaces permettant de sur-approximer et sous-approximer l'atteignabilité d'un processus \cite{PMR12-MSCS}.
@@ -161,3 +162,29 @@ Exemple de Process Hitting comprenant quatre sortes : $a$, $b$, $c$ et $bc$.
 La sorte $bc$ est appelée sorte coopérative (cf. section \ref{sec:semantiques}).
 }
 \end{figure}
+
+
+
+\section{Enjeux}
+
+Le développement et l'enrichissement de nouveaux formalismes possède comme but premier une meilleure représentation des systèmes et des phénomènes modélisés.
+L'un des objectifs de l'équipe MeForBio est l'étude formelle des propriétés de ces systèmes,
+en s'appuyant notamment sur des représentation complémentaires et adaptées de ceux-ci.
+
+La thèse de master \cite{Folschette2011} réalisée dans la même équipe avait consisté en une introduction à la recherche de telles propriétés formelles sur le modèle de Thomas.
+Cependant, son aboutissement n'avait été que partiel face à certaines difficultés d'implémentation,
+et d'autres pistes concernant cette fois le Process Hitting peuvent être envisagées au cours de la présente thèse de doctorat.
+De plus, l'étude de propriétés formelles pourra s'accompagner d'un enrichissement de la sémantique du formalisme afin d'aborder des aspects qui ne sont actuellement pas pris en compte, comme des calculs de délais à l'aide de temps chronométrique.
+
+%L'une d'elles pourra consister en l'extension des outils déjà développés à d'autres sémantiques du Process Hitting afin 
+%La thématique de l'ajout de propriétés temporelles à ce modèle pourra notamment être reprise, dans le but de quantifier un phénomène non plus par une simple chronologie d'événements mais aussi par des données quantitatives concernant des délais d'évolution.
+%De telles données chronométriques permettraient de généraliser les propriétés et outils développés sur la sémantique du Process Hitting standard.
+
+Un autre enjeu de la présente thèse consistera en la compréhension des liens entre les différents formalismes utilisés.
+Cette compréhension est nécessaire afin de dégager efficacement les atouts de chaque type de modèle,
+mais aussi dans le but d'assurer une bonne communication au sein de la communauté scientifique, qui ne partage pas toujours les mêmes représentations.
+Une contribution a déjà été proposée sur ce plan dans \cite{FPIMR12-CMSB} (cf. section \ref{sec:traduction}).
+
+Tous ces aspects ont pour but commun le développement de formalismes ayant des propriétés intéressantes et des outils adéquats.
+Ces formalismes doivent en effet pouvoir modéliser efficacement les systèmes étudiés,
+en faisant face de façon efficace aux problèmes de complexité qui se posent lors de l'étude de grands modèles.

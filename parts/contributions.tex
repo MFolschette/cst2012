@@ -1,7 +1,7 @@
 \chapter{Contributions}
 
 \section{Nouvelles sémantiques}\label{sec:semantiques}
-Un premier volet de mon début de thèse a consisté en la recherche de nouvelles sémantiques alternatives à l'utilisation de la sémantique de priorités fixes dans le but d'augmenter l'expressivité du Process Hitting.
+Un premier volet de ce début de thèse a consisté en la recherche de nouvelles sémantiques alternatives à l'utilisation de la sémantique de priorités fixes (cf. section \ref{sec:PH}) dans le but d'augmenter l'expressivité du Process Hitting.
 
 Une première proposition a consisté en l'introduction d'arcs neutralisants jouant le rôle de « priorités atomiques ».
 Un arc neutralisant est un arc orienté qui relie deux actions :
@@ -9,7 +9,7 @@ si la première est activée (\ie ses processus frappeur et cible sont présents
 Bien que les arcs neutralisants permettent d'ajouter du sens à la neutralisation d'une action par une autre, il a cependant été montré que cette sémantique peut être ramenée à celle des Process Hitting à priorités fixes par une bisimulation faible.
 De plus, leur utilisation ne permet pas d'utiliser les méthodes d'analyse statique ou de recherche de points fixes.
 
-\todo{cf. /media/DATA/Thèse/PH/Traduction\_arcs\_neutralisants-priorités/main-v1.pdf}
+%\todo{cf. /media/DATA/Thèse/PH/Traduction\_arcs\_neutralisants-priorités/main-v1.pdf}
 
 %L'une des utilisations les plus intéressantes de la sémantique de Process Hitting à priorités fixes est la modélisation de coopérations exactes grâce à la mise à jour prioritaire des sortes coopératives.
 Étant donnée la structure restreinte des actions (qui ne concernent que deux processus au plus), une coopération entre composants peut être représentée dans un Process Hitting par une sorte particulière appelée sorte coopérative, qui permet uniquement de représenter la configuration d'un ensemble de composants.
@@ -18,10 +18,11 @@ Une sorte coopérative est cependant soumise à la même sémantique qu'une sort
 Pour pallier cela, une seconde proposition de sémantique a consisté en la généralisation de la notion d'action à celle d'action conjointe, permettant l'expression d'un ensemble de frappeurs plutôt qu'un seul.
 Les actions conjointes permettent de donner du sens aux coopérations mais elles sont équivalentes à l'utilisation d'une sorte coopérative utilisée dans la sémantique du Process Hitting à priorités fixes, et ne permettent pas d'utiliser les méthodes de recherche de points fixes et d'analyse statique.
 
-\todo{cf. /media/DATA/Thèse/PH/Traduction\_RRB-actions\_conjointes/main.pdf}
+%\todo{cf. /media/DATA/Thèse/PH/Traduction\_RRB-actions\_conjointes/main.pdf}
 
-\section{Traduction d'un Process Hitting en modèle de Thomas}
-Dans un second volet du début de ma thèse, j'ai été amené à effectuer un stage au National Institute of Informatics à Tokyo, dans l'équipe du professeur Katsumi Inoue.
+\section{Traduction d'un Process Hitting en modèle de Thomas}\label{sec:traduction}
+Un second volet de cette thèse a été réalisé dans le cadre d'un stage de trois mois au National Institute of Informatics à Tokyo, dans l'équipe du professeur Katsumi Inoue.
+Ce stage a été financé par une bourse du National Institute of Informatics, et par la fondation Centrale Initiatives.
 Le sujet initial du stage portait sur l'utilisation de la programmation logique par contraintes afin de déterminer des paramètres discrets du modèle de Thomas depuis un Process Hitting, mais il a été généralisé en une méthode permettant la concrétisation d'un Process Hitting en un modèle de Thomas complet.
 
 Cette méthode en deux temps repose tout d'abord sur une recherche exhaustive des influences sur un composant de ses régulateurs, en prenant en compte les coopérations possibles.
@@ -30,6 +31,8 @@ Cette étape peut ne pas aboutir dans le cas où la dynamique du modèle représ
 ces cas non-conclusifs permettent cependant d'établir un Graphe des Interactions partiel (comportant des influences non étiquetées), ou à une paramétrisation partielle (dont certains paramètres ne peuvent être inférés).
 La seconde étape consiste en une énumération de l'ensemble des paramétrisations compatibles avec les paramètres inférés et la dynamique du Process Hitting.
 Le comportement de tous les modèles de Thomas obtenus grâce à cette méthode est nécessairement inclus dans le comportement du Process Hitting initial.
-Ces différentes étapes ont été programmés à l'aide de programmation logique (Answer Set Programming) et intégrées à la bibliothèque Pint\footnote{Disponible à \url{http://process.hitting.free.fr}} développée par Loïc Paulevé.
+Ces différentes étapes ont été programmés à l'aide d'Answer Set Programming (ASP) et intégrées en tant qu'outil sous le nom \texttt{ph2thomas} à la bibliothèque Pint\footnote{Disponible à \url{http://process.hitting.free.fr}} développée par Loïc Paulevé.
+Cette implémentation permet actuellement de traduire de grands modèles dont la taille peut atteindre plusieurs dizaines de composants.
+Elle a notamment été appliquée au modèle du récepteur du facteur de croissance épidermique (35 sortes dont 20 composants) et à celui récepteur des cellules T (54 sortes dont 40 composants), tous deux disponibles en tant qu'exemples avec Pint.
 
-Ce travail a donné lieu à une publication à la conférence CMSB'12 et à une soumission au workshop LDSSB'12 (cf. section \ref{sec:publications}).
+Ce travail a donné lieu à une publication \cite{FPIMR12-CMSB} à la conférence CMSB'12 et à une soumission au workshop LDSSB'12 (cf. section \ref{sec:publications}).
